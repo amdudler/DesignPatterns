@@ -11,6 +11,6 @@ export class Circle {
         ctx.fill();
     }
     move(delta) {
-        this.x += delta * 100; // Move 100 pixels per second
+        this.y += delta * 200; // Move 100 pixels per second
     }
 }

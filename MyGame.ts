@@ -6,25 +6,31 @@ import { Actor } from "./actors/Actor.js";
 import { SuperCircle } from "./actors/SuperCircle.js";
 
 class MyGame extends Game {
-  private rect1: Rectangle | null = null;
-  private rect2: Rectangle | null = null;
+  private rectangles: Rectangle[] = [];
+  private circles: Circle[] = [];
 
   init(): void {
     console.log("Game started!");
-    this.rect1 = new Rectangle(20, 20, 60, 40);
-    this.rect2 = new Rectangle(100, 100, 20, 20);
+    const r1 = new Rectangle(20, 20, 60, 40);
+    const r2 = new Rectangle(100, 100, 20, 20);
+    const r3 = new Rectangle(200, 150, 50, 50);
+    this.circles.push(
+      new Circle(300, 300, 50),
+      new Circle(400, 200, 30),
+      new Circle(500, 100, 40),
+    );
+    this.rectangles.push(r1, r2, r3);
   }
 
   update(deltaTime: number): void {
     console.log("update:", deltaTime);
-    this.rect1?.move(deltaTime);
-    this.rect2?.move(deltaTime);
+    this.rectangles.forEach((rect) => rect.move(deltaTime));
+    this.circles.forEach((circle) => circle.move(deltaTime));
   }
 
   render(ctx: CanvasRenderingContext2D): void {
-    this.rect1?.render(ctx);
-    this.rect2?.render(ctx);
-
+    this.rectangles.forEach((rect) => rect.render(ctx));
+    this.circles.forEach((circle) => circle.render(ctx));
   }
 }
 
