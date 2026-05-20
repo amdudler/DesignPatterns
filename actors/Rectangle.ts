@@ -13,8 +13,7 @@ export class Rectangle implements Actor {
   }
 
   move(delta: number): void {
-    this.x += delta * 100; // Move 100 pixels per second
-    this.y += delta * 100; // Move 100 pixels per second
+    this.x += delta * 200; // Move 100 pixels per second
   }
 
   sayHello(): void {
