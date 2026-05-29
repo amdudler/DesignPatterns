@@ -56,10 +56,7 @@ coverage/
 # Workspace-specific/local files not necessary for commits
 tsc commands
 
-# Compiled/transpiled artifacts (teacher requested)
-*.js
-*.cjs
-*.mjs
+# Compiled/transpiled artifacts (keep declarations and maps out of commits)
 *.js.map
 *.map
 *.d.ts
