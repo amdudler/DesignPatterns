@@ -7,10 +7,11 @@ import { Tree } from "./actors/Tree.js";
 import { SuperCircle } from "./actors/SuperCircle.js";
 import { RightMovement } from "./movements/RightMovement.js";
 import { LeftMovement } from "./movements/LeftMovement.js";
+import { Homer } from "./actors/Homer.js";
 
 class MyGame extends Game {
   private actors: Actor[] = [];
-  
+
 
   init(): void {
     console.log("Game started!");
@@ -18,13 +19,13 @@ class MyGame extends Game {
     const r2 = new Rectangle(new LeftMovement(100, 100, 100), 20, 20);
     const r3 = new Rectangle(new RightMovement(200, 150, 300), 50, 50);
     this.actors.push(
-      new Circle(new RightMovement(100, 200, 200), 30),
-        new Circle(new RightMovement(200, 300, 200), 50),
-        new Circle(new LeftMovement(300, 400, 200), 75),
+      new Circle(new RightMovement(200, 300, 200), 50),
+      new Circle(new LeftMovement(300, 400, 200), 75),
     );
     this.actors.push(r1, r2, r3);
     this.actors.push(new Tree(50, 250, 100));
     this.actors.push(new Tree(150, 500, 100));
+    this.actors.push(new Homer(new RightMovement(400, 400, 200)));
   }
 
   update(deltaTime: number): void {

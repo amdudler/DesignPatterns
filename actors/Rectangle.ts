@@ -1,11 +1,15 @@
 import { MoveStrategy } from "../movements/MoveStrategy.js";
 import { Actor } from "./Actor.js";
-export class Rectangle implements Actor {
+import { AbstractActor } from "./AbstractActor.js";
+
+export class Rectangle extends AbstractActor {
   constructor(
-    private movement: MoveStrategy,
+    protected movement: MoveStrategy,
     private width: number,
     private height: number,
-  ) { }
+  ) {
+    super(movement);
+   }
 
   render(ctx: CanvasRenderingContext2D): void {
     ctx.fillStyle = "#66aaff";
@@ -13,10 +17,7 @@ export class Rectangle implements Actor {
   }
 
   move(delta: number): void {
-    this.movement.update(delta, 200); // Move 200 pixels per second
+    this.movement.update(delta, this.movement.getX());
   }
 
-  sayHello(): void {
-    console.log("Hello from Rectangle!");
-  }
 }
