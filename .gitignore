@@ -1,1 +1,66 @@
+# Dependency directories
+node_modules/
+.pnp/
+.pnp.js
+
+# Build outputs
+dist/
+build/
+out/
+lib/
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Editor swap/backup files
+*~
+*.swp
+*.swx
+
+# Temp/cache
+.cache/
+tmp/
+temp/
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Misc
+.tscache
+*.tgz
+
+# Workspace-specific/local files not necessary for commits
 tsc commands
+
+# Compiled/transpiled artifacts (teacher requested)
+*.js
+*.cjs
+*.mjs
+*.js.map
+*.map
+*.d.ts
+*.d.ts.map
