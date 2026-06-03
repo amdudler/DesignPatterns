@@ -8,6 +8,9 @@ export class RightMovement implements MoveStrategy {
     
     update(delta: number, x: number): number {
         this.x += this.speed * delta;
+        if (this.x > 800) {
+            this.x = 0;
+        }
         return this.x;
     }
 
