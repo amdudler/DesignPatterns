@@ -31,9 +31,9 @@ export class Circle extends AbstractActor implements Observer {
 
   move(delta: number): void {
     super.move(delta);
-    if(this.movement.getX() > 400) {
-      this.standings?.increaseScore(1);
-    }
+    //if(this.movement.getX() > 400) {
+    //  this.standings?.increaseScore(1);
+    //}
   }
 
   inform(event: string, data?: any): void {

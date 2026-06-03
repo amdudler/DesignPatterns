@@ -23,14 +23,21 @@ class MyGame extends Game {
     acts.push(...factory.createRandomActors(10));
     this.actors.push(...acts);
 
-    const s1: GameStandings = new GameStandings(10, 20, 0);
-    const s2: GameStandings = new GameStandings(10, 50, 0);
+    const s1: GameStandings = GameStandings.createInstance();
     this.actors.push(s1);
-    this.actors.push(s2);
+
     const c1: Circle = new Circle(factory["createRandomMovement"](), 20, s1);
     const c2: Circle = new Circle(factory["createRandomMovement"](), 30, s1);
     this.actors.push(c1);
     this.actors.push(c2);
+
+    const r1: Rectangle = new Rectangle(factory["createRandomMovement"](), 50, 30);
+    
+    this.actors.push(r1);
+
+    this.addObserver(c1);
+    this.addObserver(c2);
+    this.addObserver(r1);
   }
 
   update(deltaTime: number): void {
