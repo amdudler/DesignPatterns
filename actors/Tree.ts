@@ -1,11 +1,15 @@
+import { Observer } from "../observer/Observer.js";
 import { Actor } from "./Actor.js";
 
-export class Tree implements Actor {
+export class Tree implements Actor, Observer {
     constructor(
         public x: number,
         public y: number,
         public size: number,
     ) {}
+    inform(event: string, data?: any): void {
+        this.size -= 10;
+    }
 
     render(ctx: CanvasRenderingContext2D): void {
         // Trunk
