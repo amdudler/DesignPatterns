@@ -11,6 +11,7 @@ import { Homer } from "./actors/Homer.js";
 import { Observer } from "./observer/Observer.js";
 import { AbstractActor } from "./actors/AbstractActor.js";
 import { ActorFactory } from "./ActorFactory.js";
+import { GameStandings } from "./actors/GameStandings.js";
 
 class MyGame extends Game {
   private actors: Actor[] = [];
@@ -21,6 +22,15 @@ class MyGame extends Game {
     const factory = new ActorFactory(800, 600);
     acts.push(...factory.createRandomActors(10));
     this.actors.push(...acts);
+
+    const s1: GameStandings = new GameStandings(10, 20, 0);
+    const s2: GameStandings = new GameStandings(10, 50, 0);
+    this.actors.push(s1);
+    this.actors.push(s2);
+    const c1: Circle = new Circle(factory["createRandomMovement"](), 20, s1);
+    const c2: Circle = new Circle(factory["createRandomMovement"](), 30, s1);
+    this.actors.push(c1);
+    this.actors.push(c2);
   }
 
   update(deltaTime: number): void {

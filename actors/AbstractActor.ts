@@ -5,5 +5,8 @@ export abstract class AbstractActor implements Actor {
     abstract render(ctx: CanvasRenderingContext2D): void;
 
     constructor(protected movement: MoveStrategy) { }
-    abstract move(delta: number): void;
+    move(delta: number): void{
+        this.movement.update(delta, 10);
+
+    }
 }
